@@ -31,25 +31,14 @@
             let mascotaData = mascota.val()
             var estado = " "
             if (mascotaData.verificacion == 1) {
-                estado = "Verificado"
+                estado = `<button type="button" class="btn btn-round btn-success">Verificado</button>`
             } else {
-                estado = "No Verificado"
+                estado = `<button type="button" class="btn btn-round btn-danger"> No Verificado</button>`
             }
             tablamascotas.innerHTML += `
             
             <tr>
-                <td>
-                    <div class="d-flex px-2 py-1">
-                        <div>
-                            <img src=${mascotaData.foto1}" class="avatar avatar-sm me-3" alt="user1"
-                                style="width: 40px; height: 40px;">
-                        </div>
-                        <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">${mascotaData.nombre}</h6>
-                            <p class="text-xs text-secondary mb-0">${mascotaData.descripcion}</p>
-                        </div>
-                    </div>
-                </td>
+                
                 <td>
                     <div class="d-flex px-2 py-1">
                         
@@ -62,13 +51,13 @@
                 <td>
                 <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="${mascotaData.foto1}" class="avatar avatar-sm me-3" alt="user1">
+                            <img id="myImg" src="${mascotaData.foto1}" alt="user1" width="80" height="80"   class="rounded-pill mx-auto d-block">
                           </div>
                           <div>
-                            <img src="${mascotaData.foto2}" class="avatar avatar-sm me-3" alt="user1">
+                            <img src="${mascotaData.foto2}" width="80" height="80" alt="user1"  class="rounded-pill mx-auto d-block">
                           </div>
                           <div>
-                            <img src="${mascotaData.foto3}" class="avatar avatar-sm me-3" alt="user1">
+                            <img src="${mascotaData.foto3}" width="80" height="80" alt="user1"  class="rounded-pill mx-auto d-block">
                           </div>
                         </div>
                 </td>
@@ -77,11 +66,12 @@
                 </td>
                 
                 <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">${estado}</span>
+                    
+                  ${estado}
                 </td>
                 <td class="align-middle">
                     <button class="btn btn-warning" data-id="${mascotaData.id_mascota}">
-                    <i class="fa fa-pencil-alt"></i>
+                    <i class="fa fa-pencil"></i>
                     </button>
 
                     
@@ -106,13 +96,14 @@
                             updateForm['razamascota'].value = data.raza
                             updateForm['sexomascota'].value = data.sexo
                             updateForm['edadmascota'].value = data.edad + " " + data.tiempo
-                            updateForm['vacunamascota'].value = data.referencia
-                            updateForm['categoriamascota'].value = data.categoria
-                            updateForm['estadomascota'].value = data.estado
+                            updateForm['vacunamascota'].value = data.vacuna
+                            updateForm['categoriamascota'].value = data.categorias
+                            updateForm['estadomascota'].value = data.estadoperdida
+                            
                             // updateForm.options(['verificarestado']) = data.verificacion
                             //  updateForm['verificarestado'].value(data.verificacion)
                             
-                            updateForm['txtverificar'].checked = data.verificacion
+                            updateForm['txtverificar'].value = data.verificacion
                            estadoverificar = data.verificacion
 
 
@@ -123,16 +114,19 @@
                         e.preventDefault()
                         estadoverificar = parseInt(updateForm['txtverificar'].value)
                         
-                        if (estadoverificar != 1 || estadoverificar == 0){
-                            estadoverificar = 0;
-                        }
-                        console.log(estadoverificar)
+                        
+                        //console.log(estadoverificar)
                             firebase.database().ref(`/mascotas/` + uid).update({
                                
                                 verificacion: estadoverificar
                                 
 
                             })
+                            swal({
+                                title: "Excelente!",
+                                text: "Cambiaste la verificación de la mascota!",
+                                icon: "success",
+                              });
                             
                         
 
@@ -156,6 +150,7 @@
         })
     })
     })
+ 
 
     
    

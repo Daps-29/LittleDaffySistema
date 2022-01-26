@@ -31,7 +31,7 @@
                   <li><a a href="organizaciones.php"><i class="fa fa-edit"></i> Organizaciones <span class="fa fa-chevron-down"></span></a>
                     
                   </li>
-                  <li><a href="mascotas.php"><i class="fa fa-desktop"></i> Mascotas <span class="fa fa-chevron-down"></span></a>
+                  <li><a href="mascotas.php"><i class="fa fa-paw"></i> Mascotas <span class="fa fa-chevron-down"></span></a>
                     
                   </li>
                   <li><a><i class="fa fa-table"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
@@ -39,6 +39,9 @@
                       <li><a href="tables.html">Nuevo Usuario</a></li>
                       <li><a href="tables_dynamic.html">Lista de usuarios</a></li>
                     </ul>
+                  </li>
+                  <li><a href="notificaciones.php"><i class="fa fa-bell"></i> Notificaciones</a>
+                    
                   </li>
                 </ul>
               </div>

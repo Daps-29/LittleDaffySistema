@@ -1,4 +1,4 @@
-<title>Gentelella Alela! | </title>
+<title>Little Daffy </title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

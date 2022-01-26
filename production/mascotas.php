@@ -10,7 +10,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
     <?php include "plantilla/header.php";?>
-
+   
 </head>
 
 <body class="nav-md">
@@ -39,7 +39,6 @@
                                             style="width:100%">
                                             <thead>
                                                 <tr>
-                                                    <th>Dueño/Correo</th>
                                                     <th>Nombre Mascota/Descripcion</th>
                                                     <th>Fotos</th>
                                                     <th>Fecha Publicacion</th>
@@ -83,7 +82,8 @@
 
 
 <!-- Modal Update -->
-<div class="modal fade" id="modal-update" name="modal-update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-update" name="modal-update" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -112,52 +112,55 @@
                         </div>
                     </div>
                     <form id="update-form">
-                    <div class="form-group">
-			  <label for="recipient-name" class="col-form-label">Nombre Mascota:</label>
-			  <input type="text" class="form-control" id="nombremascota" readonly>
-			</div>
-			<div class="form-group">
-			  <label for="message-text" class="col-form-label">Descripcion:</label>
-        <textarea class="form-control" id="descripcionmascota" readonly></textarea>
-			</div>
-      <div class="form-group">
-			  <label for="message-text" class="col-form-label">Ubicacion:</label>
-			  <input type="text" class="form-control" id="ubicacionmascota" readonly>
-			</div>
-      <div class="form-group">
-			  <label for="message-text" class="col-form-label">Raza:</label>
-			  <input type="text" class="form-control" id="razamascota" readonly>
-			</div>
-      <div class="form-group">
-			  <label for="message-text" class="col-form-label">Sexo:</label>
-			  <input type="text" class="form-control" id="sexomascota" readonly>
-			</div>
-      <div class="form-group">
-			  <label for="message-text" class="col-form-label">Edad:</label>
-			  <input type="text" class="form-control" id="edadmascota" readonly>
-			</div>
-      <div class="form-group">
-			  <label for="message-text" class="col-form-label">Vacunas:</label>
-			  <input type="text" class="form-control" id="vacunamascota" readonly>
-			</div>
-      <div class="form-group">
-			  <label for="message-text" class="col-form-label">Categoria:</label>
-			  <input type="text" class="form-control" id="categoriamascota" readonly>
-			</div>
-      <div class="form-group">
-			  <label for="message-text" class="col-form-label">Estado Mascota:</label>
-			  <input type="text" class="form-control" id="estadomascota" >
-			</div>
-            <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Nombre Mascota:</label>
+                            <input type="text" class="form-control" id="nombremascota" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Descripcion:</label>
+                            <textarea class="form-control" id="descripcionmascota" readonly></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Ubicacion:</label>
+                            <input type="text" class="form-control" id="ubicacionmascota" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Raza:</label>
+                            <input type="text" class="form-control" id="razamascota" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Sexo:</label>
+                            <input type="text" class="form-control" id="sexomascota" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Edad:</label>
+                            <input type="text" class="form-control" id="edadmascota" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Vacunas:</label>
+                            <input type="text" class="form-control" id="vacunamascota" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Categoria:</label>
+                            <input type="text" class="form-control" id="categoriamascota" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Estado Mascota:</label>
+                            <input type="text" class="form-control" id="estadomascota" readonly>
+                        </div>
+                         
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Verificar Publicacion:</label>
+                            <select id="txtverificar" class="select2_single form-control" tabindex="-1">
 
-<label class="label">Verificar</label>
-<input type="checkbox" id="txtverificar" name="txtverificar" value="1" >
-
-</div>
-<div class="col-md-2">
-</div>
-            <div class="modal-footer mt-3">
-                           <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i><span>Actualizar</span></button>
+                                <option value="1">Aceptar</option>
+                                <option value="0">Denegar</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="modal-footer mt-3">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i><span>Actualizar</span></button>
                         </div>
                     </form>
 
@@ -165,10 +168,11 @@
 
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
 
-<script src="plantilla/mascotas.js"> </script>
+<script src="plantilla/mascota.js"> </script>
+
 </html>
