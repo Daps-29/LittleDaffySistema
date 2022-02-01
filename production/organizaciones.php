@@ -59,16 +59,7 @@
 
                                             <tbody id="tabla">
 
-                                                <tr>
-                              <td>Tiger Nixon</td>
-                              <td>System Architect</td>
-                              <td>Edinburgh</td>
-                              <td>61</td>
-                              <td>2011/04/25</td>
-                              <td>$320,800</td>
-                              <td>as</td>
-                            </tr>
-                                                </tbody>
+                                            </tbody>
 
                                         </table>
                                     </div>
@@ -111,6 +102,7 @@
                     id="cerrarModal"><i class="fa fa-close"></i></button>
             </div>
             <div class="modal-body">
+                <h2 class="modal-title" id="exampleModalLabel"> * Todos los campos son obligatorios</h2>
                 <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
                     <div class="inner">
                         <div class="nav nav-masthead justify-content-center">
@@ -146,10 +138,10 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="control-label col-md-6 col-sm-3 col-xs-3">Número celular</label>
+                                    <label class="control-label col-md-6 col-sm-3 col-xs-3">Número celular: (+591)</label>
                                     <div class="col-md-12 col-sm-9 col-xs-9">
                                         <input type="number" class="form-control" id="txtContacto" name="txtContacto"
-                                            placeholder="(+591) 71234568" required>
+                                            placeholder="71234568" maxlength="8" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
                                         <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                                     </div>
                                 </div>
@@ -171,14 +163,14 @@
 
                                 <label class="label">Foto responsable:</label>
                                 <input type="file" id="txtFoto" value="" name="txtFoto" class="form-control"
-                                    placeholder="Foto">
+                                    placeholder="Foto" required>
 
                             </div>
                             <div class="col-md-6">
 
                                 <label class="label">Foto portada:</label>
                                 <input type="file" id="txtFotoPortada" value="" name="txtFotoPortada"
-                                    class="form-control" placeholder="Foto">
+                                    class="form-control" placeholder="Foto" required>
 
                             </div>
                         </div>
@@ -189,43 +181,43 @@
                                 <div class="col-md-2">
 
                                     <label class="label">Lunes</label>
-                                    <input type="checkbox" id="txtLunes" name="txtLunes" value="Si">
+                                    <input type="checkbox" id="txtLunes" name="txtLunes">
 
                                 </div>
                                 <div class="col-md-2">
         
                                     <label class="label">Martes</label>
-                                    <input type="checkbox" id="txtMartes" name="txtMartes" value="Si">
+                                    <input type="checkbox" id="txtMartes" name="txtMartes">
         
                                 </div>
                                 <div class="col-md-2">
         
                                     <label class="label">Miercoles</label>
-                                    <input type="checkbox" id="txtMiercoles" name="txtMiercoles" value="Si">
+                                    <input type="checkbox" id="txtMiercoles" name="txtMiercoles">
         
                                 </div>
                                 <div class="col-md-2">
         
                                     <label class="label">Jueves</label>
-                                    <input type="checkbox" id="txtJueves" name="txtJueves" value="Si">
+                                    <input type="checkbox" id="txtJueves" name="txtJueves">
         
                                 </div>
                                 <div class="col-md-2">
         
                                     <label class="label">Viernes</label>
-                                    <input type="checkbox" id="txtViernes" name="txtViernes" value="Si">
+                                    <input type="checkbox" id="txtViernes" name="txtViernes">
         
                                 </div>
                                 <div class="col-md-2">
         
                                     <label class="label">Sábado</label>
-                                    <input type="checkbox" id="txtSabado" name="txtSabado" value="Si">
+                                    <input type="checkbox" id="txtSabado" name="txtSabado">
         
                                 </div>
                                 <div class="col-md-2">
         
                                     <label class="label">Domingo</label>
-                                    <input type="checkbox" id="txtDomingo" name="txtDomingo" value="Si">
+                                    <input type="checkbox" id="txtDomingo" name="txtDomingo">
                                 </div>
                             </div>
                         </div>
@@ -281,8 +273,7 @@
                         </main>
 
                         <div class="modal-footer mt-3">
-                            <button type="submit" class="btn btn-primary"><i
-                                    class="fa fa-save"></i><span>Registrar</span></button>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i><span> Registrar</span></button>
                         </div>
                     </form>
 
@@ -302,8 +293,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Actualizar Organizacion</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                    id="closeRegisterModal"><i class="fa fa-close"></i></button>
+                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    id="cerrarUpdateModal"><i class="fa fa-close"></i></button>
             </div>
             <div class="modal-body">
                 <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -412,15 +403,15 @@
                             <div class="col-md-6">
 
                                 <label class="label">Hora entrada:</label>
-                                <input type="text" id="txtHoraen" name="txtHoraen" class="form-control"
-                                    placeholder="Hora entrada (Ej. 13:30)">
+                                <input type="time" id="txtHoraen" name="txtHoraen" class="form-control"
+                                    placeholder="Hora entrada (Ej. 13:30)" required>
 
                             </div>
                             <div class="col-md-6">
 
                                 <label class="label">Hora salida:</label>
-                                <input type="text" id="txtHorafin" name="txtHorafin" class="form-control"
-                                    placeholder="Hora salida (Ej. 20:30)">
+                                <input type="time" id="txtHorafin" name="txtHorafin" class="form-control"
+                                    placeholder="Hora salida (Ej. 20:30)" required>
 
                             </div>
                         </div>
@@ -443,12 +434,12 @@
                         <main role="main" class="inner cover">
                             <div class="row mb-2">
                                 <div class="col-md-4">
-                                    <input type="text" id="txtLat" name="txtLat" class="form-control"
+                                    <input type="hidden" id="txtLatitud" name="txtLatitud" class="form-control"
                                         placeholder="latitude">
 
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" id="txtLng" name="txtLng" class="form-control"
+                                    <input type="hidden" id="txtLngitud" name="txtLngitud" class="form-control"
                                         placeholder="longitud">
 
                                 </div>
@@ -459,8 +450,7 @@
                         </main>
 
                         <div class="modal-footer mt-3">
-                            <button type="submit" class="btn btn-primary"><i
-                                    class="fas fa-save"></i><span>Actualizar</span></button>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i><span> Actualizar</span></button>
                         </div>
                     </form>
 
