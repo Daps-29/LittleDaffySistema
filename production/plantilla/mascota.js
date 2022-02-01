@@ -107,7 +107,7 @@
                            estadoverificar = data.verificacion
 
 
-                        })
+                        }   )
                     const uid = es.target.dataset.id
                     
                     updateForm.addEventListener('submit', (e) => {

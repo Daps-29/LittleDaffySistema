@@ -8,13 +8,23 @@ var firebaseConfig = {
     appId: "1:417998320479:web:d1345154002cd7cc1bbcea",
     measurementId: "G-259CCJ548M"
 };
+
+
+const openModal = document.getElementById('OpenRegisterModal')
 const modal = document.getElementById('exampleModal')
+const showRegisterModal = () => {
+    $('#exampleModal').modal('show');
+}
+openModal.addEventListener('click', showRegisterModal)
+const closeModal = document.getElementById('cerrarModal')
+closeModal.addEventListener('click', () => {
+    $('#exampleModal').modal('hide');
+})
+
 const registerForm = document.getElementById('register-form')
 const updateForm = document.getElementById('update-form')
 
-const showRegisterModal = () => {
-    modal.classList.toggle('is-active')
-}
+
 
 
 
@@ -28,7 +38,8 @@ const deleteOrganizacion = (uid) => {
     firebase.database().ref(`/organizaciones/` + uid).remove()
 }
 
-
+var fotoedit;
+var fotoedit_portada;
 var tablaorganizaciones = document.getElementById('tabla');
 window.addEventListener('DOMContentLoaded', async (e) => {
     await organizacionesRef.on('value', (organizaciones) => {
@@ -42,7 +53,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 estado = "INACTIVO"
             }
             tablaorganizaciones.innerHTML += `
-            
+
             <tr>
                 <td>
                     <div class="d-flex px-2 py-1">
@@ -85,9 +96,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             </tr>
 
             `
-            const updateButtons = document.querySelectorAll('.btn-warning')
-            var fotoedit;
-            var fotoedit_portada;
+            const updateButtons = document.querySelectorAll('.btn-warning');
             updateButtons.forEach((button) => {
                 button.addEventListener('click', (es) => {
                     const id = es.target.dataset.id
@@ -398,14 +407,16 @@ registerForm.addEventListener('submit', (e) => {
                         id_organizacion: id_organizacion,
                         estado_organizacion: estado_organizacion
                     })
-                    alert('Organizacion creada exitosamente')
+                    $('#exampleModal').modal('hide');
+                    swal({
+                        title: "Excelente!",
+                        text: "Organizacion creada exitosamente!",
+                        icon: "success",
+                    });
 
                 })
         })
 
-
-
-    $('#exampleModal').modal('hide');
     document.getElementById("register-form").reset();
 
 })
